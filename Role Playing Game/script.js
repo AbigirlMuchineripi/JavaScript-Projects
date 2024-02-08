@@ -37,9 +37,18 @@ function goStore() {
      button2.onclick = buyWeapon;
       button3.onclick = goTown;
 
-    //modifying your display text. Change the innerText property   
+    //modifying  the display text. Changing the innerText property  to  "You enter the store."
     const text = document.querySelector("#text");
     text.innerText = "You enter the store."
+}
+function buyHealth(){
+
+}
+function buyWeapon(){
+  
+}
+function goTown(){
+  
 }
  
   
