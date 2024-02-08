@@ -10,20 +10,22 @@ const button1 = document.querySelector("#button1");
 const button2 = document.querySelector("#button2");
 const button3 = document.querySelector("#button3");
 const monsterHealthText = document.querySelector("#monsterHealth");
-
-function goStore(){
-    console.log("Going to store.");  //updated in function below
-}
-function goCave(){
-    console.log("Going to cave.")
-}
-  function fightDragon(){
-    console.log("Fighting dragon.")
-}
+const locations = [
+    { name:"town square"},
+    "button text":[        
+            "Go to store",
+            "Go to cave",
+            "Fight dragon"        
+    ]
+];
 //initialize buttons
 button1.onclick = goStore;
 button2.onclick = goCave;
 button3.onclick = fightDragon;
+
+function update(location) {
+
+}
 
 // Using innerText property that controls the text that appears in an HTML element.
 function goTown(){
@@ -44,11 +46,18 @@ function goStore() {
      // Updating functions that run when  the buttons are clicked again.
      button1.onclick =buyHealth;
      button2.onclick = buyWeapon;
-      button3.onclick = goTown;
+     button3.onclick = goTown;
 
     //modifying  the display text. Changing the innerText property  to  "You enter the store."
-    const text = document.querySelector("#text");
+   // const text = document.querySelector("#text");
     text.innerText = "You enter the store."
+}
+function goCave(){
+    console.log("Going to cave.")
+}
+  
+function fightDragon(){
+    console.log("Fighting dragon.")
 }
 function buyHealth(){
 
