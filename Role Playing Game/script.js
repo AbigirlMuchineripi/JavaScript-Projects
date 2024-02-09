@@ -23,7 +23,15 @@ const locations = [
       ],
       "text":"You are in the town square. You see a sign that says \"Store\"."
  
+    },
+    {
+      name: "store",
+      "button text": ["Buy 10 health (10 gold)","Buy weapon (30 gold)" , "Go to town square"],
+      "button functions": [buyHealth,  buyWeapon, goTown],
+      text: "You enter the store."
+  
     }
+
 ];
 //initialize buttons
 button1.onclick = goStore;
@@ -31,11 +39,7 @@ button2.onclick = goCave;
 button3.onclick = fightDragon;
 
 function update(location) {
-
-}
-
-// Using innerText property that controls the text that appears in an HTML element.
-function goTown(){
+    //this code initially came from the goTown function
     button1.innerText = "Go to store";
     button2.innerText = "Go to cave";
     button3.innerText = "Fight dragon";
@@ -43,21 +47,18 @@ function goTown(){
     button2.onclick = goCave;
     button3.onclick = fightDragon;
     text.innerText = "You are in the town square. You see a sign that says \"Store\"."
+
+}
+
+// Using innerText property that controls the text that appears in an HTML element.
+function goTown(){
+    //calling update to use data from the location that is passed to it
+    update()
+   
 }
  
 function goStore() {
-      button1.innerText = "Buy 10 health (10 gold)";
-      button2.innerText = "Buy weapon (30 gold)";
-      button3.innerText = "Go to town square";
-
-     // Updating functions that run when  the buttons are clicked again.
-     button1.onclick =buyHealth;
-     button2.onclick = buyWeapon;
-     button3.onclick = goTown;
-
-    //modifying  the display text. Changing the innerText property  to  "You enter the store."
-   // const text = document.querySelector("#text");
-    text.innerText = "You enter the store."
+     
 }
 function goCave(){
     console.log("Going to cave.")
