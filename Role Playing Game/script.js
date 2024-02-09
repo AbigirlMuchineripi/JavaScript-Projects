@@ -38,22 +38,21 @@ button1.onclick = goStore;
 button2.onclick = goCave;
 button3.onclick = fightDragon;
 
-function update(location) {
-    //this code initially came from the goTown function
-    button1.innerText = "Go to store";
-    button2.innerText = "Go to cave";
-    button3.innerText = "Fight dragon";
-    button1.onclick = goStore;
-    button2.onclick = goCave;
-    button3.onclick = fightDragon;
-    text.innerText = "You are in the town square. You see a sign that says \"Store\"."
-
+function update(location) {   
+    button1.innerText = location["buttontext"][0];
+    button2.innerText = location["button text"][1];
+    button3.innerText = location["button text"][2];
+    button1.onclick = location["button functions"][0];
+    button2.onclick = location["button functions"][1];
+    button3.onclick = location["button functions"][2];
+    
+    text.innerText = location.text;
 }
 
 // Using innerText property that controls the text that appears in an HTML element.
 function goTown(){
     //calling update to use data from the location that is passed to it
-    update()
+    update(locations[0]); // bracket notation
    
 }
  
