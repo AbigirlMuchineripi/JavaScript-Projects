@@ -10,6 +10,26 @@ const button1 = document.querySelector("#button1");
 const button2 = document.querySelector("#button2");
 const button3 = document.querySelector("#button3");
 const monsterHealthText = document.querySelector("#monsterHealth");
+const weapons = [
+    {
+        name:"stick",
+        power:5
+      },
+       {
+        name:"dagger",
+        power:30
+      },
+       {
+        name:"claw hammer",
+        power:50
+      },
+       {
+        name:"sword",
+        power:100
+      }
+    
+   
+];
 const locations = [
     { 
     name:"town square",    
@@ -73,14 +93,35 @@ function fightDragon(){
     console.log("Fighting dragon.")
 }
 function buyHealth(){
-    //gold: gold = gold - 10; updated to
+    /*//gold: gold = gold - 10; updated to
     //gold = gold - 10;
     //health = health + 10;
     // Compound assignment
     gold -= 10;
     health += 10;
+    const goldText = document.querySelector("#goldText");
+    goldText.innerText = gold;
+    const healthText = document.querySelector("#healthText");
+    healthText.innerText = health;
+    */
+    if(gold >= 10){
+        gold -= 10;
+        health += 10;
+        goldText.innerText = gold;
+        healthText.innerText = health;
+      
+        } else {
+            text.innerText = "You do not have enough gold to buy health."
+        
+          }
+  
 }
 function buyWeapon(){
+    if(gold >= 30){
+        gold -= 30;
+        currentWeapon++;
+    
+    }
   
 }
 function fightSlime(){
