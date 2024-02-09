@@ -79,8 +79,6 @@ function buyHealth(){
     // Compound assignment
     gold -= 10;
     health += 10;
-
-
 }
 function buyWeapon(){
   
