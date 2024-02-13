@@ -124,6 +124,13 @@ function buyWeapon(){
         let newWeapon = weapons[currentWeapon].name;    
     text.innerText = "You now have a " + newWeapon + ".";
     inventory.push(newWeapon);
+    text.innerText += " In your inventory you have: " + inventory.join(", ");
+    /*
+    `inventory.join(", ")` concatenates the contents of the inventory array into a string, separating
+     each element with a comma and a space. Then, it appends this string to the existing text.innerText
+     using the concatenation operator +=.
+    */
+
     }
   
 }
