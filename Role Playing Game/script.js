@@ -116,24 +116,26 @@ function buyHealth(){
           }
   
 }
-function buyWeapon(){
-    if(gold >= 30){
-        gold -= 30;
-        currentWeapon++;
-        goldText.innerText = gold;
-        let newWeapon = weapons[currentWeapon].name;    
-    text.innerText = "You now have a " + newWeapon + ".";
-    inventory.push(newWeapon);
-    text.innerText += " In your inventory you have: " + inventory.join(", ");
-    /*
-    `inventory.join(", ")` concatenates the contents of the inventory array into a string, separating
-     each element with a comma and a space. Then, it appends this string to the existing text.innerText
-     using the concatenation operator +=.
-    */
+function buyWeapon() {
+    if(currentWeapon < weapons.length-1){
+      if (gold >= 30) {
+      gold -= 30;
+      currentWeapon++;
+      goldText.innerText = gold;
+      //let newWeapon = weapons[currentWeapon].name;
+      let newWeapon = weapons.length;
 
+      text.innerText = "You now have a " + newWeapon + ".";
+      inventory.push(newWeapon);
+      text.innerText += " In your inventory you have: " + inventory;
+    } else {
+      text.innerText = "You do not have enough gold to buy a weapon.";
     }
-  
-}
+    }else{
+        text.innerText = "You already have the most powerful weapon!";
+      }
+    
+  }
 function fightSlime(){
 
 }
